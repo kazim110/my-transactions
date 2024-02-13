@@ -1,0 +1,26 @@
+/* app/assets/stylesheets/splash.css */
+
+.splash-container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.links {
+  margin-top: 20px;
+}
+
+.links a {
+  margin-right: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
