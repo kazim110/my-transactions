@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -25,7 +23,7 @@ class Ability
         category.user == user
       end
     end
-    
+
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?
