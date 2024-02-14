@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :purchase_categories, through: :purchases
 
   validates :name, presence: true
+
+  def admin?
+    false
+  end
 end
