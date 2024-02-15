@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   authenticated :user do
     root 'categories#index', as: :authenticated_root
   end
-  resources :categories, only: [:index, :new, :create, :show]
+  resources :categories do
+    resources :purchases
+  end
   resources :splash, only: [:index]
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

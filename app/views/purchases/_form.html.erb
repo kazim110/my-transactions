@@ -1,0 +1,31 @@
+<%= form_with(model: [(@category || Category.find(params[:category_id])), @purchase], local: true, class: 'purchase-form') do |form| %>
+  <% if @purchase.errors.any? %>
+    <div class="errors">
+      <h2><%= pluralize(@purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
+      <ul>
+        <% @purchase.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id, 'Category' %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: 'Choose category.....' } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Save", class: 'submit-btn' %>
+  </div>
+<% end %>
