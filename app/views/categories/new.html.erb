@@ -1,4 +1,10 @@
 <div class="page-container">
-  <h1>New Category</h1>
+<div class="content-wrap">
+<div class="navigation-bar">
+  <%= link_to image_tag('backarrow.png', alt: 'Back'), root_path, class: 'back-button' %>
+  <h2 class="page-title"><strong>New Category</strong></h2>
+  <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, form: { class: "sign-out-form" }, class: "sign-out" %>
+</div>
+<div class="page-container">
 <%= render "form", category: @category %>
 </div>

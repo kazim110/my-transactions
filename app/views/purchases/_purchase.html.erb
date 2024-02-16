@@ -1,0 +1,8 @@
+<div id="<%= dom_id(purchase) %>" class="purchase-item">
+  <div class="purchase-info">
+    <p class="purchase-name"><strong><%= purchase.name %></strong></p>
+    <p class="purchase-date"><%= purchase.created_at.strftime('%d %b %Y') %></p>
+  </div>
+
+  <p class="purchase-amount">$<%= purchase.amount %></p>
+</div>

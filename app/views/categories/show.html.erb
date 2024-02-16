@@ -1,2 +1,36 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<div class="page-container">
+  <div class="content-wrap">
+    <div class="navigation-bar">
+      <%= link_to image_tag('backarrow.png', alt: 'Back'), categories_path, class: 'back-button' %>
+      <h2 class="page-title"><strong><%= @category.name %></strong></h2>
+      <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, form: { class: "sign-out-form" }, class: "sign-out" %>
+    </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
+    <%= render 'category', category: @category %>
+
+    <section class="purchases-section">
+      <div id="purchases">
+        <% @purchases.each do |purchase| %>
+          <%= link_to category_purchase_path(@category, purchase), class: 'purchase-link' do %>
+            <%= render "purchases/purchase", purchase: purchase %>
+          <% end %>
+        <% end %>
+      </div>
+    </section>
+  </div>
+
+  <section class="actions-section">
+  <div class="action-buttons">
+  <%= link_to new_category_purchase_path(@category), data: { testid: "new-purchase-button" }, class: 'new-purchase-button' do %>
+      <button>New Purchase</button>
+    <% end %>
+
+    <%= link_to edit_category_path(@category), data: { testid: "edit-category-button" }, class: 'edit-category-button' do %>
+      <button>Edit Category</button>
+    <% end %>
+    </div>
+    <%= button_to "Delete Category", @category, method: :delete, data: { confirm: 'Are you sure?' }, form: { 'data-confirm': 'Are you sure?' }, onclick: "return confirm('Are you sure?');", class: "delete-category-button" %>
+  </section>
+</div>
