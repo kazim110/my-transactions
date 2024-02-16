@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :categories do
     resources :purchases
   end
+  resources :purchases, except: [:new, :show, :index]
+
   resources :splash, only: [:index]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

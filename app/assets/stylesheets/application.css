@@ -13,3 +13,49 @@
  *= require_tree .
  *= require_self
  */
+:root {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f0f0f0;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.field-email,
+.field-name,
+.field-password {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-left: 10px;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  width: 90%;
+  padding: 10px;
+  font-size: 16px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.field-checkbox {
+  margin-bottom: 20px;
+}
+
+.actions-login {
+  text-align: center;
+}

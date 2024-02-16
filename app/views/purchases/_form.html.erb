@@ -10,6 +10,7 @@
     </div>
   <% end %>
 
+  <div class="form-fields">
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -23,6 +24,7 @@
   <div class="field">
     <%= form.label :category_id, 'Category' %>
     <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: 'Choose category.....' } %>
+  </div>
   </div>
 
   <div class="actions">
