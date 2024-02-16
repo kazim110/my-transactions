@@ -1,0 +1,23 @@
+<div id="<%= dom_id(category) %>" class="category-item">
+<% if category.icon.attached? %>
+<%= image_tag(category.icon, alt: category.name, class: 'category-icon') %>
+<% else %>
+<!-- Provide a fallback if no icon is attached -->
+<span class="category-icon-placeholder">No icon</span>
+<% end %>
+
+  <div class="category-content">
+  <div class="category-header">
+    <p class="category-title">
+      <strong><%= category.name %></strong>
+    </p>
+    <p class="category-total">
+      <strong>Total: $<%= category.purchases.sum(:amount) %></strong>
+    </p>
+  </div>
+
+  <p class="category-date">
+    <span><%= category.created_at.strftime('%d %b %Y') %></span>
+  </p>
+  </div>
+</div>
