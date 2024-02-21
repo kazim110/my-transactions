@@ -13,11 +13,11 @@ services:
     # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: "bundle exec rails server"
     envVars:
-      - key: DATABASE_URL
+      - key: postgres://my_transactions_db_user:7D4qYmivVHX66JNlr5l6R95vlTvmN2aZ@dpg-cnb09d6d3nmc73dogdfg-a/my_transactions_db
         fromDatabase:
           name: my_transactions_development
           property: connectionString
-      - key: RAILS_MASTER_KEY
+      - key: 983a0afd7ee80cb8afb00d69e69d582e
         sync: false
       - key: WEB_CONCURRENCY
         value: 2 # sensible default
