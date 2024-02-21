@@ -56,6 +56,14 @@ input[type="password"] {
   margin-bottom: 20px;
 }
 
-.actions-login {
-  text-align: center;
+.actions-login,
+.actions-signup {
+  background-color: #e53e3e;
+  color: white;
+  padding: 1.2rem;
+  font-size: 1rem;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
