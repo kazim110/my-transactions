@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-# rubocop:disable Style/HashSyntax
 RSpec.describe Purchase, type: :model do
   let(:user) { create(:user) }
   let(:category) { create(:category, user: user) }
@@ -38,4 +37,3 @@ RSpec.describe Purchase, type: :model do
     expect(purchase.category).to be_valid
   end
 end
-# rubocop:enable Style/HashSyntax

@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-# rubocop:disable Style/HashSyntax
 RSpec.describe Category, type: :model do
   # Assuming you have a factory for categories defined
   let(:category) { create(:category) }
@@ -38,4 +37,3 @@ RSpec.describe Category, type: :model do
     expect(category).not_to be_valid
   end
 end
-# rubocop:enable Style/HashSyntax
