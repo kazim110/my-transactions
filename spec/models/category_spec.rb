@@ -21,7 +21,7 @@ RSpec.describe Category, type: :model do
 
   it 'is valid with valid attributes' do
     user = create(:user) # Create a user
-    category = build(:category, user: user) # Associate the category with the user
+    category = build(:category, user:) # Associate the category with the user
     expect(category).to be_valid
   end
 

@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Purchase, type: :model do
   let(:user) { create(:user) }
-  let(:category) { create(:category, user: user) }
-  let(:purchase) { build(:purchase, author: user, category: category) }
+  let(:category) { create(:category, user:) }
+  let(:purchase) { build(:purchase, author: user, category:) }
 
   it 'is valid with valid attributes' do
     expect(purchase).to be_valid
