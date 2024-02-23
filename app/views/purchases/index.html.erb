@@ -1,0 +1,20 @@
+<div class="purchases-container">
+  <h1 class="purchases-title">Purchases</h1>
+
+  <div id="purchases">
+    <% if @purchases %>
+    <% @purchases.each do |purchase| %>
+      <div class="purchase-item">
+        <%= render purchase %>
+        <p>
+          <%= link_to "Show this purchase", purchase, class: 'purchase-link' %>
+        </p>
+      </div>
+    <% end %>
+    <% else %>
+      <p>No purchases found</p>
+    <% end %>
+  </div>
+
+  <%= link_to "New purchase", new_category_purchase_path, class: 'new-purchase-link' %>
+</div>

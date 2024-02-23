@@ -1,0 +1,28 @@
+<div class="navigation-bar">
+  <%= link_to image_tag('backarrow.png', alt: 'Back'), category_path(@purchase.category), class: 'back-button' %>
+  <h2 class="page-title"><strong>Show Purchase</strong></h2>
+  <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, form: { class: "sign-out-form" }, class: "sign-out" %>
+</div>
+
+<div class="purchase-details">
+  <p class="purchase-detail">
+    <span><strong>Name:</strong></span>
+    <span><%= @purchase.name %></span>
+  </p>
+  <p class="purchase-detail">
+    <span><strong>Amount:</strong></span>
+    <span>$<%= @purchase.amount %></span>
+  </p>
+  <p class="purchase-detail">
+    <span><strong>Category:</strong></span>
+    <span><%= @purchase.category.name %></span>
+  </p>
+  <p class="purchase-detail">
+    <span><strong>Created at:</strong></span>
+    <span><%= @purchase.created_at %></span>
+  </p>
+</div>
+
+<div class="purchase-actions">
+  <%= button_to "Delete", @purchase, method: :delete, class: "delete-purchase-button" %>
+</div>
