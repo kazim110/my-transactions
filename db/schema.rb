@@ -68,7 +68,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_15_164842) do
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_purchases_on_author_id"
     t.index ["category_id"], name: "index_purchases_on_category_id"
-    t.index ["name"], name: "index_purchases_on_name"
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,11 +79,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_15_164842) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

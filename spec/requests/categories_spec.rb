@@ -1,16 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'CategoriesController', type: :request do
+  include Devise::Test::IntegrationHelpers # Include Devise test helpers
   describe 'GET /index' do
-    let(:user) { create(:user) } # Create a user using FactoryBot
-
     before(:all) do
-      @category = FactoryBot.create(:category) # Create a category
-      @category.user = user # Associate the category with the user
-      @category.save
+      @user = FactoryBot.create(:user)
+      @category = FactoryBot.create(:category, name: 'Sample Category 1', user: @user)
     end
 
-    before(:each) { sign_in user }
+    before(:each) { sign_in @user }
 
     it 'returns a successful response' do
       get categories_path

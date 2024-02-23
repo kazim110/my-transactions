@@ -8,6 +8,5 @@ class CreatePurchases < ActiveRecord::Migration[7.1]
 
       t.timestamps
     end
-    add_index :purchases, :name
   end
 end

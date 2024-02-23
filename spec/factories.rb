@@ -10,11 +10,13 @@ FactoryBot.define do
     icon { Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/files/sample_icon.png'), 'image/png') }
   end
 
-  factory :purchase do
-    sequence(:name) { |n| "Purchase #{n}" }
-    amount { Faker::Number.decimal(l_digits: 2) }
-    association :author, factory: :user # This line associates the purchase with a user
-    category # Changed from categories to category
+  FactoryBot.define do
+    factory :purchase do
+      sequence(:name) { |n| "Purchase #{n}" }
+      amount { Faker::Number.number(digits: 2) } # Generates a random integer with 2 digits
+      association :author, factory: :user
+      category
+    end
   end
 
   factory :purchase_with_category, traits: [:with_category]
