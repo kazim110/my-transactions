@@ -1,7 +1,9 @@
 <div class="splash-container">
-  <h1>Welcome to YourApp</h1>
-  <p>Please login or sign up to access the application.</p>
-  <div class="links">
+  <div class='welcome-title'>
+    <h1>Welcome to YourApp</h1>
+    <p>Please login or sign up to access the application.</p>
+  </div>
+  <div class="welcome-links">
     <%= link_to 'Login', new_user_session_path, class: 'btn btn-primary' %>
     <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-secondary' %>
   </div>

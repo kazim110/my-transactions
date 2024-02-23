@@ -32,6 +32,8 @@
   flex-grow: 2;
 }
 
+.signin-btn,
+.signup-btn,
 .sign-out,
 .sign-out-form input {
   background: none;
