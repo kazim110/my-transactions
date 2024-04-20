@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
-ruby '3.2.2'
+ruby '3.2.3'
 
 gem 'devise'
 
 gem 'cancancan'
+
+gem 'psych', '~> 2.0', '>= 2.0.17'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
